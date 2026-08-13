@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Destination Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn active">Home</a>
+      <a href="countries.html" class="nav-btn">Countries</a>
+      <a href="about.html" class="nav-btn">About us</a>
+    </div>
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="main-content">
+    <h1 class="hero-title slide-in">Discover Your Next Destination</h1>
+    <p class="hero-subtitle slide-in delay-1">Check live weather, currency, and travel insights before you book your trip.</p>
+
+    <!-- Featured Destination Cards -->
+    <div class="cards-container">
+      
+      <div class="card slide-in delay-2" onclick="navigateToCountry('France')">
+        <h2>France</h2>
+        <p>Press here to view more details about this place</p>
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500" alt="France Eiffel Tower">
+      </div>
+
+      <div class="card slide-in delay-3" onclick="navigateToCountry('Japan')">
+        <h2>Japan</h2>
+        <p>Press here to view more details about this place</p>
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" alt="Japan Mount Fuji">
+      </div>
+
+      <div class="card slide-in delay-4" onclick="navigateToCountry('Italy')">
+        <h2>Italy</h2>
+        <p>Press here to view more details about this place</p>
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500" alt="Italy Colosseum">
+      </div>
+
+    </div>
+
+    <!-- Live Weather Overview Box -->
+    <div class="weather-box slide-in delay-5">
+      <h3>Weather</h3>
+      <div class="weather-list">
+        <p><strong>France :</strong> <span id="weather-france">Loading...</span></p>
+        <p><strong>Japan :</strong> <span id="weather-japan">Loading...</span></p>
+        <p><strong>Italy :</strong> <span id="weather-italy">Loading...</span></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
