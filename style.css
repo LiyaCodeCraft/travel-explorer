@@ -1,4 +1,6 @@
-/* --- Global Resets & Theme --- */
+/* ==========================================
+   1. GLOBAL RESETS & THEME
+   ========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,9 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
   background-color: #418292; /* Dark Teal Background */
   color: #ffffff;
   min-height: 100vh;
@@ -14,13 +18,17 @@ body {
   flex-direction: column;
 }
 
-/* --- Navigation Bar --- */
+/* ==========================================
+   2. NAVIGATION BAR & MOBILE MENU
+   ========================================== */
 .navbar {
   background-color: #9BEBFF; /* Light Cyan Navbar */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Anchor point for mobile dropdown */
+  width: 100%;
 }
 
 .nav-links {
@@ -48,6 +56,7 @@ body {
   background-color: #134062; /* Navy Active Highlight */
 }
 
+/* Hamburger Icon */
 .menu-icon {
   background-color: #134062;
   width: 42px;
@@ -68,9 +77,45 @@ body {
   border-radius: 2px;
 }
 
-/* --- Main Layout --- */
+/* Mobile Dropdown Box */
+.mobile-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background-color: #134062;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  min-width: 180px;
+}
+
+.mobile-menu.active {
+  display: flex; /* Displays when hamburger icon is clicked */
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  background-color: #2D6A8D;
+}
+
+/* ==========================================
+   3. MAIN LAYOUT & TYPOGRAPHY
+   ========================================== */
 .main-content {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
@@ -90,7 +135,9 @@ body {
   margin-bottom: 35px;
 }
 
-/* --- Home Page Cards --- */
+/* ==========================================
+   4. HOME PAGE CARDS & WEATHER BOX
+   ========================================== */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -135,7 +182,6 @@ body {
   border-radius: 16px;
 }
 
-/* --- Home Weather Box --- */
 .weather-box {
   background-color: #9BEBFF;
   color: #000000;
@@ -157,7 +203,9 @@ body {
   margin: 10px 0;
 }
 
-/* --- Countries Page & Search Bar --- */
+/* ==========================================
+   5. COUNTRIES PAGE & SEARCH BAR
+   ========================================== */
 .search-header {
   display: flex;
   justify-content: space-between;
@@ -206,6 +254,7 @@ body {
   text-align: center;
   transition: transform 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
+  word-wrap: break-word;
 }
 
 .country-btn:hover {
@@ -213,7 +262,9 @@ body {
   background-color: #ffffff;
 }
 
-/* --- About Us Page Layout --- */
+/* ==========================================
+   6. ABOUT US PAGE
+   ========================================== */
 .about-container {
   background-color: #9BEBFF;
   color: #000000;
@@ -253,7 +304,9 @@ body {
   color: #e0f7fc;
 }
 
-/* --- Country Details Page Layout --- */
+/* ==========================================
+   7. COUNTRY DETAILS PAGE
+   ========================================== */
 .country-header-badge {
   background-color: #9BEBFF;
   color: #000000;
@@ -300,7 +353,9 @@ body {
   margin-top: 10px;
 }
 
-/* --- Smooth Slide-In Animation --- */
+/* ==========================================
+   8. ANIMATIONS
+   ========================================== */
 .slide-in {
   opacity: 0;
   transform: translateY(30px);
@@ -324,47 +379,63 @@ body {
   }
 }
 
-
 /* ==========================================
-   MOBILE & RESPONSIVE DESIGN (Media Queries)
+   9. MOBILE & PHONE RESPONSIVE QUERIES
    ========================================== */
-
-/* Hide regular desktop nav buttons on smaller screens */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Hides desktop buttons, leaving only the hamburger icon */
-  }
-
+  /* Navigation Bar */
   .navbar {
     padding: 12px 20px;
   }
 
+  .nav-links {
+    display: none !important; /* Hide desktop links on phone */
+  }
+
+  .mobile-menu {
+    right: 16px;
+    width: calc(100% - 32px);
+    max-width: 280px;
+  }
+
+  /* Main Content Adjustments */
   .main-content {
-    padding: 25px 15px;
+    padding: 20px 15px;
   }
 
   .hero-title {
-    font-size: 2rem; /* Scaled down hero title */
+    font-size: 1.9rem;
+    line-height: 1.25;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 25px;
   }
 
-  /* Search header stacks vertically on phones */
+  /* Search Header Stacking */
   .search-header {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
 
+  .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .search-container input {
-    width: 100%; /* Makes search bar full-width on mobile */
+    width: 100%;
     max-width: 320px;
   }
 
-  /* Turn the 4-column countries grid into a 2-column grid on phones */
+  .search-container input:focus {
+    width: 100%;
+  }
+
+  /* Countries Grid (2 Columns on Tablets/Mobile) */
   .countries-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -375,36 +446,44 @@ body {
     font-size: 0.95rem;
   }
 
-  /* About Us section stacks vertically */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  /* Cards & Boxes fit Mobile Viewport Width */
+  .cards-container,
+  .details-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
+  .card, 
+  .detail-card, 
+  .weather-box {
+    width: 100% !important;
+    max-width: 340px;
+  }
+
+  /* About Us Layout */
   .about-container {
     padding: 25px 20px;
   }
 
-  /* Home cards and Details cards adjust width */
-  .card, .detail-card {
-    width: 100%;
-    max-width: 340px;
-  }
-
-  .weather-box {
-    width: 100%;
-    padding: 20px;
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
 
-/* Extra small devices (portrait phones, under 480px) */
-@media (max-width: 480px) {
+/* Extra Small Devices (Phones under 420px wide) */
+@media (max-width: 420px) {
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 
-  /* Single column for ultra-small screens */
+  /* Single Column Layout for long country names on smaller screens */
   .countries-grid {
     grid-template-columns: 1fr;
+  }
+
+  .country-header-badge {
+    padding: 10px 30px;
   }
 }
