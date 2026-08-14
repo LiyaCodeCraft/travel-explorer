@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Details - Travel Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="countries.html" class="nav-btn active">Countries</a>
+      <a href="about.html" class="nav-btn">About us</a>
+    </div>
+    <div class="menu-icon"><span></span><span></span><span></span></div>
+  </header>
+
+  <main class="main-content">
+    <div class="country-header-badge slide-in">
+      <h1 id="country-title">France</h1>
+    </div>
+
+    <div class="details-cards-container">
+      <div class="detail-card slide-in delay-1">
+        <h2>Weather</h2>
+        <div id="weather-details" class="detail-content">Loading live weather...</div>
+      </div>
+
+      <div class="detail-card slide-in delay-2">
+        <h2>Flight Price</h2>
+        <div id="flight-details" class="detail-content">Estimated round-trip: $650 - $900</div>
+      </div>
+
+      <div class="detail-card slide-in delay-3">
+        <h2>Top Attractions / Landmarks</h2>
+        <div id="attractions-details" class="detail-content">Loading photos...</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
