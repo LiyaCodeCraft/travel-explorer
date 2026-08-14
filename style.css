@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Position anchor for dropdown */
 }
 
 .nav-links {
@@ -66,6 +67,39 @@ body {
   height: 3px;
   background-color: #ffffff;
   border-radius: 2px;
+}
+
+/* --- Mobile Dropdown Menu --- */
+.mobile-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background-color: #134062;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.mobile-menu.active {
+  display: flex; /* Displayed when menu-icon is clicked */
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  background-color: #2D6A8D;
 }
 
 /* --- Main Layout --- */
