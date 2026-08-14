@@ -21,7 +21,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Position anchor for dropdown */
 }
 
 .nav-links {
@@ -67,39 +66,6 @@ body {
   height: 3px;
   background-color: #ffffff;
   border-radius: 2px;
-}
-
-/* --- Mobile Dropdown Menu --- */
-.mobile-menu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  right: 20px;
-  background-color: #134062;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  flex-direction: column;
-  gap: 10px;
-  z-index: 100;
-  min-width: 160px;
-}
-
-.mobile-menu.active {
-  display: flex; /* Displayed when menu-icon is clicked */
-}
-
-.mobile-menu a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 14px;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-}
-
-.mobile-menu a:hover {
-  background-color: #2D6A8D;
 }
 
 /* --- Main Layout --- */
@@ -355,5 +321,90 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/* ==========================================
+   MOBILE & RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Hide regular desktop nav buttons on smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hides desktop buttons, leaving only the hamburger icon */
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .main-content {
+    padding: 25px 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Scaled down hero title */
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  /* Search header stacks vertically on phones */
+  .search-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .search-container input {
+    width: 100%; /* Makes search bar full-width on mobile */
+    max-width: 320px;
+  }
+
+  /* Turn the 4-column countries grid into a 2-column grid on phones */
+  .countries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .country-btn {
+    padding: 14px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* About Us section stacks vertically */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .about-container {
+    padding: 25px 20px;
+  }
+
+  /* Home cards and Details cards adjust width */
+  .card, .detail-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .weather-box {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Extra small devices (portrait phones, under 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  /* Single column for ultra-small screens */
+  .countries-grid {
+    grid-template-columns: 1fr;
   }
 }
