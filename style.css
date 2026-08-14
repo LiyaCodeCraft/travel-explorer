@@ -1,4 +1,4 @@
-/* --- Global Resets & Fonts --- */
+/* --- Global Resets & Theme --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +7,16 @@
 }
 
 body {
-  background-color: #418292; /* Matching Figma Teal Background */
+  background-color: #418292; /* Dark Teal Background */
   color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* --- Navbar Styling --- */
+/* --- Navigation Bar --- */
 .navbar {
-  background-color: #9BEBFF; /* Matching Light Cyan Header Bar */
+  background-color: #9BEBFF; /* Light Cyan Navbar */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ body {
 }
 
 .nav-btn.active {
-  background-color: #134062; /* Active Dark Blue Highlight */
+  background-color: #134062; /* Navy Active Highlight */
 }
 
 .menu-icon {
@@ -90,7 +90,7 @@ body {
   margin-bottom: 35px;
 }
 
-/* --- Cards Container & Cards --- */
+/* --- Home Page Cards --- */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -100,7 +100,7 @@ body {
 }
 
 .card {
-  background-color: #9BEBFF; /* Light Cyan Card Fill */
+  background-color: #9BEBFF;
   color: #000000;
   border-radius: 20px;
   padding: 24px 20px;
@@ -135,7 +135,7 @@ body {
   border-radius: 16px;
 }
 
-/* --- Home Page Weather Box --- */
+/* --- Home Weather Box --- */
 .weather-box {
   background-color: #9BEBFF;
   color: #000000;
@@ -157,44 +157,48 @@ body {
   margin: 10px 0;
 }
 
-/* --- Smooth Slide-In Animation --- */
-.slide-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInUp 0.8s ease forwards;
+/* --- Countries Page & Search Bar --- */
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
-.delay-4 { animation-delay: 0.6s; }
-.delay-5 { animation-delay: 0.75s; }
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.search-container input {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #134062;
+  background-color: #9BEBFF;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  width: 250px;
+  transition: all 0.3s ease;
 }
 
+.search-container input:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 280px;
+}
 
-/* --- Countries Page Grid --- */
 .countries-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 .country-btn {
   background-color: #9BEBFF;
   color: #000000;
-  padding: 16px;
+  padding: 18px;
   border-radius: 16px;
   text-decoration: none;
   font-weight: 700;
@@ -209,7 +213,7 @@ body {
   background-color: #ffffff;
 }
 
-/* --- About Page Layout --- */
+/* --- About Us Page Layout --- */
 .about-container {
   background-color: #9BEBFF;
   color: #000000;
@@ -249,10 +253,10 @@ body {
   color: #e0f7fc;
 }
 
-/* --- Country Details Layout --- */
+/* --- Country Details Page Layout --- */
 .country-header-badge {
-  background-color: #134062;
-  color: #ffffff;
+  background-color: #9BEBFF;
+  color: #000000;
   padding: 12px 60px;
   border-radius: 30px;
   display: inline-block;
@@ -267,11 +271,11 @@ body {
 }
 
 .detail-card {
-  background-color: #134062;
+  background-color: #2D6A8D;
   color: #ffffff;
   border-radius: 20px;
   padding: 30px 20px;
-  width: 300px;
+  width: 320px;
   min-height: 320px;
   text-align: center;
 }
@@ -279,14 +283,43 @@ body {
 .detail-card h2 {
   font-size: 1.6rem;
   margin-bottom: 20px;
-  border-bottom: 2px solid #2D6A8D;
+  border-bottom: 2px solid #9BEBFF;
   padding-bottom: 10px;
+}
+
+.detail-content {
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 .detail-card img {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
   margin-top: 10px;
+}
+
+/* --- Smooth Slide-In Animation --- */
+.slide-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.30s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.60s; }
+.delay-5 { animation-delay: 0.75s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

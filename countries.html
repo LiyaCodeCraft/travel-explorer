@@ -8,20 +8,32 @@
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="nav-links">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="countries.html" class="nav-btn active">Countries</a>
       <a href="about.html" class="nav-btn">About us</a>
     </div>
-    <div class="menu-icon"><span></span><span></span><span></span></div>
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
   <main class="main-content">
-    <h1 class="hero-title slide-in">Choose Your Country</h1>
+    <!-- Header & Integrated Search Bar -->
+    <div class="search-header">
+      <h1 class="hero-title slide-in">Choose Your Country</h1>
+      <div class="search-container slide-in">
+        <input type="text" id="country-search" placeholder="🔍 Search country..." onkeyup="filterCountries()">
+      </div>
+    </div>
     
+    <!-- Dynamic Country Cards Grid -->
     <div class="countries-grid slide-in delay-1" id="countries-container">
-      <!-- Generated dynamically by index.js -->
+      <!-- Injected by index.js -->
     </div>
   </main>
 
